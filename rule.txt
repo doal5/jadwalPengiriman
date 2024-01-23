@@ -1,0 +1,24 @@
+role 3 level
+kepala toko
+admin
+kurir
+
+-Kepala Toko
+melihat laporan
+input jadwal
+dashboard
+
+- admin 
+mengatur pengiriman kurir yang mengantar
+input jadwal
+lihat laporan
+
+- kurir ada 2
+lihat jadwal dan update
+
+table {
+ - pengiriman
+ - user
+ - jadwal
+ - jadwal_detail
+}
