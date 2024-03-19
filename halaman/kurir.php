@@ -35,12 +35,12 @@ if (isset($_POST["updateuser"])) {
         <div class="card">
             <div class="card-header">
                 <span class="badge badge-primary" style="background-color: #4863A0;">
-                    <h1 class="card-title">JADWAL PENGIRIMAN</h1>
+                    <h1 class="card-title">User</h1>
                 </span>
             </div>
             <!-- /.card-header -->
             <div class="card-body">
-                <table id="example1" class="table table-bordered table-striped">
+                <table id="example" class="table table-bordered table-striped">
                     <thead>
                         <?php
                         if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1 && $_SESSION["level"] != 2) : ?>
@@ -81,7 +81,7 @@ if (isset($_POST["updateuser"])) {
                         if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1 && $_SESSION["level"] != 2) {
                             $sql = mysqli_query($kon, "SELECT * FROM jadwal WHERE nama_kurir = '$_SESSION[namakurir]'");
                         } else {
-                            $sql = mysqli_query($kon, "SELECT * FROM users");
+                            $sql = mysqli_query($kon, "SELECT * FROM users where level = 3");
                         } ?>
 
                         <?php

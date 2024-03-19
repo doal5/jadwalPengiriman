@@ -70,7 +70,7 @@ if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1 && $_SESSION["level"] 
                                 <div class="card-header">
                                     <center>
                                         <h1><span class="badge badge-success">Laporan Jadwal Periode</span> </h1>
-                                        <h2><span class="badge badge-primary"><?= date('d-m-y', $taw) ?></span> s/d <span class="badge badge-primary"><?= date('d-m-Y', $tak) ?></span> </h2>
+                                        <h2><span class="badge badge-primary"><?= date('d F Y', $taw) ?></span> s/d <span class="badge badge-primary"><?= date('d F Y', $tak) ?></span> </h2>
                                     </center>
                                 </div>
                                 <?php $query = mysqli_query($kon, "SELECT * FROM jadwal WHERE jadwal_pengiriman BETWEEN '$awal' AND '$akhir'"); ?>
@@ -98,7 +98,7 @@ if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1 && $_SESSION["level"] 
                                                 <td><?= $data["nama_kurir"] ?></td>
                                                 <td><?= $data["metode_pembayaran"] ?></td>
                                                 <td><span class="badge badge-success"> <?= $data["alamat"] ?></span></td>
-                                                <td><span class="badge badge-success"> <?= $data["status_pengiriman"] ?></span></td>
+                                                <td><span <?php if ($data["status_pengiriman"] == 'Dikirim') : ?> class="badge badge-success" <?php else : ?> class="badge badge-danger" <?php endif; ?>> <?= $data["status_pengiriman"] ?></span></td>
                                             </tr>
                                         <?php } ?>
                                     </tbody>

@@ -71,11 +71,11 @@ if (isset($_POST["update"])) {
                                 <tr id="tr_<?= $data["no_jadwal"] ?>">
                                     <td><?= $i++ ?></td>
                                     <td><?= $data["nama_pemesan"] ?></td>
-                                    <td> <span class="badge badge-primary"><?= date('d-m-Y', $jadwal)  ?></span></td>
+                                    <td> <span class="badge badge-primary"><?= date('d F Y', $jadwal)  ?></span></td>
                                     <td><?= $data["nama_kurir"] ?></td>
                                     <td><?= $data["metode_pembayaran"] ?></td>
                                     <td><span class="badge badge-success"> <?= $data["alamat"] ?></span></td>
-                                    <td><span class="badge badge-success"> <?= $data["status_pengiriman"] ?></span></td>
+                                    <td><span <?php if ($data["status_pengiriman"] == 'Dikirim') : ?> class="badge badge-success" <?php else : ?> class="badge badge-danger" <?php endif; ?>> <?= $data["status_pengiriman"] ?></span></td>
                                     <td>
                                         <div class="btn-group btn-group-sm" role="group" aria-label="Basic example">
                                             <a href="jadwaldetail.php?no_jadwal=<?= $data["no_jadwal"] ?>"> <button type="button" class="btn btn-primary" "><i class=" fa fa-eye"></i></button></a>

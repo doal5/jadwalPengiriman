@@ -191,8 +191,13 @@ if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1 && $_SESSION["level"] 
 
                     </div>
                 </form>
-                <a href="halaman/dashboard.php"> <button class="btn btn-xs btn-primary">
-                        << Kembali Ke Halaman Dashboard</button> </a>
+                <?php if ($_SESSION["level"] == 1) : ?>
+                    <a href="halaman/dashboard.php"> <button class="btn btn-xs btn-primary">
+                            << Kembali Ke Halaman Dashboard</button> </a>
+                <?php else : ?>
+                    <a href="halaman/jadwal.php"> <button class="btn btn-xs btn-primary">
+                            << Kembali Ke Halaman Dashboard</button> </a>
+                <?php endif; ?>
             </div>
         </div>
     </div>
