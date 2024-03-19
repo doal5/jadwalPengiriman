@@ -35,7 +35,6 @@ if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1) {
                                     $jumlah = mysqli_num_rows($pengiriman);
                                     ?>
                                     <h3><?= $jumlah ?></h3>
-
                                     <p>Pengiriman</p>
                                 </div>
                                 <div class="icon">
@@ -67,7 +66,6 @@ if (!isset($_SESSION["level"]) || $_SESSION["level"] != 1) {
                 </div>
             </div>
         </section>
-
 
         <script src="../assets/js/delete.js"></script>
         <script src="../assets/js/sweetalert.min.js"></script>
